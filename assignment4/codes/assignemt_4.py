@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 x=np.arange(1,53,1)#all cards in deck is given linear nos
 a=np.random.randint(1,53,size=1)#generated a random card
@@ -17,3 +18,13 @@ if(a not in arr and b not in arr):
 print("therotical probabilty for 2 aces is: ",(4/52)*(4/52))
 print("therotical probabilty for 1 ace and 1 non ace is: ",(4/52)*(48/52))
 print("therotical probabilty for 2 non aces is: ",(48/52)*(48/52))
+
+x = [0,1,2]
+y_1 = [0.9,0.99,1]
+plt.stem(x,y_1,label = 'CDF',linefmt='blue',markerfmt='D')
+y_2 = [0.9,0.09,0.01]
+plt.stem(x,y_2,label = 'PMF',linefmt='red',markerfmt='D')
+plt.ylabel('Probability')
+plt.xlabel('Random Variable(X)')
+plt.legend()
+plt.show()
